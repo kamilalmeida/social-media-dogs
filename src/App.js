@@ -4,18 +4,21 @@ import Home from "./components/home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/login/Login";
 import GlobalStyles from "./styles/global";
+import { UserStorage } from "./UserContext";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <GlobalStyles />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login/*" element={<Login />} />
-        </Routes>
-        <Footer />
+        <UserStorage>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login/*" element={<Login />} />
+          </Routes>
+          <Footer />
+        </UserStorage>
       </BrowserRouter>
     </>
   );
