@@ -5,18 +5,19 @@ import LoginCreate from "../loginCreate/LoginCreate";
 import LoginPasswordLost from "../passwordLost/LoginPasswordLost";
 import LoginPasswordReset from "../passwordReset/LoginPasswordReset";
 import { UserContext } from "../../UserContext";
+import * as C from "./styles";
 
 export default function Login() {
   const { login } = React.useContext(UserContext);
   if (login === true) return <Navigate to="/conta" />;
   return (
-    <div>
+    <C.Login>
       <Routes>
         <Route path="/" element={<LoginForm />} />
         <Route path="criar" element={<LoginCreate />} />
         <Route path="perdeu" element={<LoginPasswordLost />} />
         <Route path="resetar" element={<LoginPasswordReset />} />
       </Routes>
-    </div>
+    </C.Login>
   );
 }

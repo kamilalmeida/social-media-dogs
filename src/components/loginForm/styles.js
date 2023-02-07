@@ -4,7 +4,7 @@ export const Title = styled.h1`
   font-family: "Spectral", georgia;
   line-height: 1;
   font-size: 3rem;
-  margin: 1rem 0;
+  margin: 1rem 0 2rem 0;
   position: relative;
   z-index: 1;
 
@@ -24,6 +24,8 @@ export const Title = styled.h1`
 
 export const Container = styled.div`
   margin-bottom: 2rem;
+  max-width: 80rem;
+  padding: 2rem;
 `;
 
 export const ButtonLostPassword = styled.span`
@@ -31,6 +33,7 @@ export const ButtonLostPassword = styled.span`
   color: #666;
   padding: 0.5rem 0;
   line-height: 1;
+  margin-left: 2rem;
 
   &:after {
     content: "";
@@ -42,7 +45,8 @@ export const ButtonLostPassword = styled.span`
 `;
 
 export const Register = styled.div`
-  margin-top: 4rem;
+
+  margin: 4rem 0 0 2rem;
 
   p {
     margin-top: 2rem;
@@ -61,6 +65,6 @@ export const Register = styled.div`
     height: 0.5rem;
     width: 3rem;
     border-radius: 0.2rem;
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
   }
 `;
