@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 export default createGlobalStyle`
 *{
@@ -8,7 +8,7 @@ body{
   margin:0px;
   padding-top: 4rem;
   color: #333;
-  --type-firts: Helvetica, Arial, sans-serif;
+  
   font-family: Helvetica, Arial, sans-serif;
 }
 h1, h2,h3, h4,p{
@@ -30,7 +30,29 @@ h1, h2,h3, h4,p{
     display:block;
     max-width:100%;
   }
-  a{
+  a {
+    color:#333;
     text-decoration:none;
   }
+
+ 
+  
+
+`;
+
+export const BaseAnimation = styled.div`
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: AnimeLeft 0.3s forwards;
+`;
+const FadeInAnimation = keyframes`  
+  to { opacity: 1;
+    transform: initial;
+   }
+  from { opacity: 0; }
+
+`;
+
+export const AnimeLeft = styled(BaseAnimation)`
+  animation-name: ${FadeInAnimation};
 `;
