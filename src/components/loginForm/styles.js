@@ -4,7 +4,7 @@ export const Title = styled.h1`
   font-family: "Spectral", georgia;
   line-height: 1;
   font-size: 3rem;
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0 2rem 2rem;
   position: relative;
   z-index: 1;
 
@@ -24,7 +24,7 @@ export const Title = styled.h1`
 
 export const Container = styled.div`
   margin-bottom: 2rem;
-  max-width: 80rem;
+  max-width: 50rem;
   padding: 2rem;
 `;
 

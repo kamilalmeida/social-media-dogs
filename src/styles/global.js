@@ -35,9 +35,6 @@ h1, h2,h3, h4,p{
     text-decoration:none;
   }
 
- 
-  
-
 `;
 
 export const BaseAnimation = styled.div`
@@ -46,10 +43,13 @@ export const BaseAnimation = styled.div`
   animation: AnimeLeft 0.3s forwards;
 `;
 const FadeInAnimation = keyframes`  
-  to { opacity: 1;
+  to { 
+    opacity: 1;
     transform: initial;
    }
-  from { opacity: 0; }
+  from { 
+    opacity: 0; 
+  }
 
 `;
 

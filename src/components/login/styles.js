@@ -13,7 +13,7 @@ export const Login = styled.section`
     background: url(${img}) no-repeat center center / cover;
   }
 
-  @media (max-width: 40rem) {
+  @media (max-width: 50rem) {
     grid-template-columns: 1fr;
     &:before {
       display: none;
@@ -21,4 +21,12 @@ export const Login = styled.section`
   }
 `;
 
-export const Container = styled.div``;
+export const Forms = styled.div`
+  max-width: 40rem;
+  padding: 1rem;
+
+  @media (max-width: 40rem) {
+   max-width:100%;
+    
+  }
+`;
