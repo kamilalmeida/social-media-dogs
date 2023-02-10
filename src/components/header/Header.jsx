@@ -5,7 +5,7 @@ import * as C from "./styles";
 import { UserContext } from "../../UserContext";
 
 export default function Header() {
-  const { data, userLogout } = React.useContext(UserContext);
+  const { data } = React.useContext(UserContext);
   return (
     <C.Container>
       <nav>
@@ -14,10 +14,7 @@ export default function Header() {
         </Link>
         {data ? (
           <C.LinkLogin>
-            <Link to="/conta">
-              {data.nome}
-              <button onClick={userLogout}>Sair</button>
-            </Link>
+            <Link to="/conta">{data.nome}</Link>
           </C.LinkLogin>
         ) : (
           <C.LinkLogin>

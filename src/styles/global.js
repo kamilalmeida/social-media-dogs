@@ -1,17 +1,19 @@
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 
 export default createGlobalStyle`
-*{
+* {
   box-sizing: border-box;
 }
-body{
+
+body {
   margin:0px;
   padding-top: 4rem;
   color: #333;
   
   font-family: Helvetica, Arial, sans-serif;
 }
-h1, h2,h3, h4,p{
+
+h1, h2,h3, h4,p {
   margin:0px;
   }
   ul, li{
@@ -26,7 +28,7 @@ h1, h2,h3, h4,p{
     color:#333;
 
   }
-  img{
+  img {
     display:block;
     max-width:100%;
   }
@@ -47,6 +49,7 @@ const FadeInAnimation = keyframes`
     opacity: 1;
     transform: initial;
    }
+   
   from { 
     opacity: 0; 
   }
