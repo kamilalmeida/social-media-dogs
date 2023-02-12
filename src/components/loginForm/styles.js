@@ -4,7 +4,7 @@ export const Title = styled.h1`
   font-family: "Spectral", georgia;
   line-height: 1;
   font-size: 3rem;
-  margin: 1rem 0 2rem 2rem;
+  margin: 1rem 0;
   position: relative;
   z-index: 1;
 
@@ -23,9 +23,46 @@ export const Title = styled.h1`
 `;
 
 export const Container = styled.div`
-  margin-bottom: 2rem;
+  form {
+    margin-bottom: 2rem;
+  }
   max-width: 50rem;
-  padding: 2rem;
+
+  .lostpassword {
+    display: inline-block;
+    color: #666;
+    padding: 0.5rem 0;
+    line-height: 1;
+  }
+
+  .register {
+    margin-top: 4rem;
+  }
+
+  .register p {
+    margin: 2rem 0;
+  }
+
+  .subtitle {
+    font-family: "Spectral", georgia;
+    line-height: 2rem;
+    font-size: 2rem;
+  }
+  .subtitle:after {
+    content: "";
+    display: block;
+    background: #ddd;
+    width: 3rem;
+    height: 0.5rem;
+    border-radius: 0.2rem;
+  }
+  .lostpassword:after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: #666;
+    display: block;
+  }
 `;
 
 export const ButtonLostPassword = styled.span`
@@ -45,7 +82,6 @@ export const ButtonLostPassword = styled.span`
 `;
 
 export const Register = styled.div`
-
   margin: 4rem 0 0 2rem;
 
   p {

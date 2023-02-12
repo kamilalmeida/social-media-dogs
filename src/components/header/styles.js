@@ -5,7 +5,7 @@ export const Container = styled.header`
   width: 100%;
 
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
- 
+
   position: fixed;
   z-index: 100;
   background: #fff;
@@ -26,15 +26,16 @@ export const Container = styled.header`
   nav a {
     color: #333;
   }
-`;
 
-export const LinkLogin = styled.a`
-  &::after {
+  .logo {
+    padding: 0.5rem 0;
+  }
+  .login:after {
     content: "";
     display: inline-block;
     width: 14px;
     height: 17px;
     background: url(${img}) no-repeat center center;
-    margin-left: 0.5rem
+    margin-left: 0.5rem;
   }
 `;

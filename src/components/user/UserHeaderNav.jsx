@@ -1,31 +1,38 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 import { ReactComponent as MyPhoto } from "../../assets/feed.svg";
 import { ReactComponent as GoOut } from "../../assets/sair.svg";
 import { ReactComponent as AddPhoto } from "../../assets/adicionar.svg";
 import { ReactComponent as Stats } from "../../assets/estatisticas.svg";
-import * as C from "./styles";
+
 import { useMedia } from "../../Hooks/useMedia";
 
 export function UserHeaderNav() {
   const { userLogout } = React.useContext(UserContext);
 
   const mobile = useMedia("(max-width:40rem)");
-  const [mobileMenu, setMobileMeu] = React.useState(false);
-  console.log(mobileMenu);
+  const [mobileMenu, setMobileMenu] = React.useState(false);
+
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    setMobileMenu(false);
+  }, [pathname]);
   return (
-  <C.ContainerMenu>
+    <>
       {mobile && (
         <button
-          className="ButtonActived"
-          mobileMenu={mobileMenu}
-          onClick={() => setMobileMeu(!mobileMenu)}
+          className={`mobileButton ${mobileMenu && "mobileButtonActive"}`}
+          onClick={() => setMobileMenu(!mobileMenu)}
           aria-label="Menu"
         ></button>
       )}
 
-      <C.NavBar>
+      <nav
+        className={`${mobile ? "navMobile" : "navbar"} ${
+          mobileMenu && "navMobileActive"
+        }`}
+      >
         <NavLink to="/conta" end>
           <MyPhoto />
           {mobile && "Minhas fotos"}
@@ -42,7 +49,7 @@ export function UserHeaderNav() {
           <GoOut />
           {mobile && "Sair"}
         </button>
-      </C.NavBar>
-  </C.ContainerMenu>
+      </nav>
+    </>
   );
 }

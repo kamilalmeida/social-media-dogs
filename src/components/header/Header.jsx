@@ -8,18 +8,18 @@ export default function Header() {
   const { data } = React.useContext(UserContext);
   return (
     <C.Container>
-      <nav>
-        <Link to="/" aria-label="Dogs - Home">
+      <nav className="containerglobal">
+        <Link to="/" aria-label="Dogs - Home" className="logo">
           <Dogs />
         </Link>
         {data ? (
-          <C.LinkLogin>
-            <Link to="/conta">{data.nome}</Link>
-          </C.LinkLogin>
+          <Link to="/conta" className="login">
+            {data.nome}
+          </Link>
         ) : (
-          <C.LinkLogin>
-            <Link to="/login">Criar / Login</Link>
-          </C.LinkLogin>
+          <Link to="/login" className="login">
+            Criar / Login
+          </Link>
         )}
       </nav>
     </C.Container>

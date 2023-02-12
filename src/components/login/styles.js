@@ -12,21 +12,17 @@ export const Login = styled.section`
     display: block;
     background: url(${img}) no-repeat center center / cover;
   }
-
+  .forms {
+    max-width: 30rem;
+    padding: 1rem;
+  }
   @media (max-width: 50rem) {
     grid-template-columns: 1fr;
     &:before {
       display: none;
     }
-  }
-`;
-
-export const Forms = styled.div`
-  max-width: 40rem;
-  padding: 1rem;
-
-  @media (max-width: 40rem) {
-   max-width:100%;
-    
+    .forms {
+      max-width: 100%;
+    }
   }
 `;

@@ -6,7 +6,7 @@ export default createGlobalStyle`
 }
 
 body {
-  margin:0px;
+  margin: 0px;
   padding-top: 4rem;
   color: #333;
   
@@ -36,7 +36,11 @@ h1, h2,h3, h4,p {
     color:#333;
     text-decoration:none;
   }
-
+.containerglobal {
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
 `;
 
 export const BaseAnimation = styled.div`

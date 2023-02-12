@@ -1,107 +1,104 @@
 import styled from "styled-components";
 
-export const Header = styled.header`
-  display: grid;
-  grid-template-colunms: 1fr auto;
-  aling-items: center;
-  margin-botton: 2rem;
-  position: relative;
-`;
+export const UserNavigation = styled.section`
+  .navbar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
 
-export const Container = styled.section`
-  margin-left: 2rem;
-`;
-
-export const ContainerMenu = styled.div`
-  background: red;
-  button {
+  .navbar a,
+  .navbar button,
+  .mobileButton {
     background: #eee;
     border-radius: 0.2rem;
     height: 40px;
     width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    transiotion: 0.1s;
+    cursor: pointer;
+    border: none;
     padding: 0px;
-    display: flex;
+  }
+
+  .navbar a:hover,
+  .navbar a:focus,
+  .navbar button:hover,
+  .navbar button:focus {
+    background: #fff;
+    box-shadow: 0 0 0 3px #ffbb11bf;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    transiotion: 0.1s;
-    cursor: pointer;
-    border: none;
+    margin: 2rem 0;
+    position: relative;
   }
-  .ButtonActived {
-  }
-`;
-
-export const NavBar = styled.nav`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-
-  margin: 1rem 0 0 2rem;
-
-  a,
-  button {
-    background: #eee;
-    border-radius: 0.2rem;
-    height: 40px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    transiotion: 0.1s;
-    cursor: pointer;
-    border: none;
-  }
-
-  a:hover,
-  a:focus,
-  button:hover,
-  button:focus {
-    background: #ffbb11c7;
-    box-shadow: 0 0 0 3px #eee;
-  }
-`;
-
-export const MobileButton = styled.button`
-  background: #eee;
-  border-radius: 0.2rem;
-  height: 40px;
-  width: 40px;
-  padding: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid transparent;
-  transiotion: 0.1s;
-  cursor: pointer;
-  border: none;
-
-  &:after {
+  .mobileButton:after {
     content: "";
-    background: red;
     display: block;
-    height: 2px;
     width: 1.2rem;
-    border-radius: 2px;
+    height: 2.5px;
+    border-radius: 3px;
     background: currentColor;
+
     box-shadow: 0 6px currentColor, 0 -6px currentColor;
+    transition: 0.2s;
   }
-  &:after {
-    transform: ${({ mobileMenu }) =>
-      mobileMenu ? "rotate(90deg)" : "rotate(0)"};
-    width: 4px;
-  }
-
-  &:focus,
-  &:hover {
+  .mobileButton:focus,
+  .mobileButton:hover {
     outline: none;
-    color: #fff;
-    background: #fea;
-  }
-`;
+    background: #fff;
+    box-shadow: 0 0 0 3px #fea;
 
-export const MobileButtonActive = styled(MobileButton)`
-  &:after {
+    color: #fb1;
+  }
+  .mobileButtonActive:after {
+    transform: rotate(90deg);
+    width: 4px;
+    heigth: 4px;
+    box-shadow: 0 8px currentColor, 0 -8px currentColor;
+  }
+  .navMobile {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    transform: translateX(-10px);
+    opacity: 0;
+    pointer-event: none;
+  }
+  .navMobileActive {
+    transition: 0.3s;
+    opacity: 1;
+    z-index: 100;
+    pointer-event: inital;
+  }
+
+  .navMobile a,
+  .navMobile button {
+    display: flex;
+    align-items: center;
+    background: none;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    border: none;
+  }
+  .navMobile svg {
+    margin-right: 0.5rem;
+  }
+  .navMobile a:hover svg > *,
+  .navMobile button:hover svg > * {
+    fill: #fb1;
   }
 `;

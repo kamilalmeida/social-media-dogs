@@ -9,11 +9,8 @@ export function UserHeader() {
   const [title, setTitle] = React.useState("");
   const location = useLocation();
 
- 
-
-
   React.useEffect(() => {
-    console.log('1')
+    console.log("1");
     const { pathname } = location;
     switch (pathname) {
       case "/conta/estatisticas":
@@ -28,9 +25,9 @@ export function UserHeader() {
   }, [location]);
 
   return (
-    <Component.Header>
+    <header className="header">
       <C.Title>{title}</C.Title>
       <UserHeaderNav />
-    </Component.Header>
+    </header>
   );
 }
