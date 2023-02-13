@@ -15,7 +15,7 @@ export function PhotoPost() {
   const idade = useForm("number");
   const [img, setImg] = React.useState({});
   const { data, error, request, loading } = useFetch();
-  console.log(data);
+ 
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -23,6 +23,7 @@ export function PhotoPost() {
   }, [data, navigate]);
 
   function handleSubmit(event) {
+  
     event.preventDefault();
     const formData = new FormData();
     formData.append("img", img.raw);
@@ -31,7 +32,9 @@ export function PhotoPost() {
     formData.append("idade", idade.value);
 
     const token = window.localStorage.getItem("token");
+    console.log(token);
     const { url, options } = PHOTO_POST(formData, token);
+  
     request(url, options);
   }
 

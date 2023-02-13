@@ -48,9 +48,15 @@ export default function LoginForm() {
           <div className="register">
             <h2 className="subtitle">Cadastre-se</h2>
             <p>Ainda não possui conta? Cadastre-se no site.</p>
-            <Button>
-              <Link to="criar">Cadastro</Link>
-            </Button>
+            {loading ? (
+              <Button>
+                <Link to="criar">Cadastrando...</Link>
+              </Button>
+            ) : (
+              <Button>
+                <Link to="criar">Cadastro</Link>
+              </Button>
+            )}
           </div>
         </Comp.Container>
       </C.AnimeLeft>
