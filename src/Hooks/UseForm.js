@@ -6,9 +6,13 @@ const types = {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     message: "Preencha um email válido",
   },
+  number: {
+    regex: /^\d+$/,
+    message: "Utilize apenas números."
+  },
 };
 
-export function useForm  (type) {
+export function useForm(type) {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(null);
 
@@ -39,6 +43,4 @@ export function useForm  (type) {
     validate: () => validate(value),
     onBlur: () => validate(value),
   };
-};
-
-
+}
