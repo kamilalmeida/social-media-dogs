@@ -5,9 +5,10 @@ import * as Comp from "./styles";
 
 export function Feed() {
   const [modalPhoto, setModalPhoto] = React.useState(null);
+  console.log(modalPhoto);
   return (
     <Comp.Container>
-      {modalPhoto && <FeedModal photo={modalPhoto} />}
+      {modalPhoto && <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />}
       <FeedPhotos setModalPhoto={setModalPhoto} />
     </Comp.Container>
   );
